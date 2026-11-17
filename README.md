@@ -50,15 +50,13 @@
 
 `\begin{table}[t]`
 
-<!-- TODO: replace the em-dashes with your measured numbers (mean ± std, N seeds). -->
-
 *Table 1 — frozen-embedding cell-type annotation, held-out donors.*
 
-| dataset | baseline | ours | Δ |
-|---------|---------:|-----:|---:|
-| Tabula Sapiens | — | — | — |
-| Human Cell Atlas | — | — | — |
-| PBMC 10k | — | — | — |
+<!-- Regenerated from benchmarks.json by automation/update_readme.py. Edit the
+     JSON, not this table; the Δ column is computed for you. -->
+<!-- BEGIN:benchmarks -->
+*No measurements yet — add rows to `benchmarks.json` and push.*
+<!-- END:benchmarks -->
 
 `\end{table}`
 
