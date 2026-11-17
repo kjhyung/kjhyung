@@ -19,7 +19,7 @@
 
 ```latex
 \documentclass{researcher}
-\usepackage{bioinformatics,single-cell,benchmarking}
+\Sepackage{bioinformatics,single-cell}
 \usepackage{amsmath,booktabs}
 \title{Representations for high-throughput sequencing data}
 \author{Junhyung Kim}
