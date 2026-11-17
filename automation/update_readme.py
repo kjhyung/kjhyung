@@ -12,13 +12,8 @@ Usage:
 Only the text between the BEGIN/END marker pairs is replaced; the rest of
 README.md is left byte-identical:
 
-    <!-- BEGIN:benchmarks -->   ... <!-- END:benchmarks -->
     <!-- BEGIN:publications --> ... <!-- END:publications -->
     <!-- BEGIN:works -->        ... <!-- END:works -->
-
-The benchmarks table is rendered from benchmarks.json next to README.md:
-
-    [{"dataset": "PBMC 10k", "baseline": 0.71, "ours": 0.79}]
 """
 
 import argparse
@@ -37,8 +32,6 @@ PUB_BEGIN = "<!-- BEGIN:publications -->"
 PUB_END = "<!-- END:publications -->"
 WORKS_BEGIN = "<!-- BEGIN:works -->"
 WORKS_END = "<!-- END:works -->"
-BENCH_BEGIN = "<!-- BEGIN:benchmarks -->"
-BENCH_END = "<!-- END:benchmarks -->"
 MAX_ROWS = 8
 UA = {"User-Agent": "readme-theme-automation/1.0"}
 
@@ -192,43 +185,6 @@ def render_works(repos):
     return "\n".join(lines)
 
 
-def load_benchmarks(path):
-    """Rows from benchmarks.json: a list of {dataset, baseline, ours} objects."""
-    path = Path(path)
-    if not path.exists():
-        return []
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except ValueError as err:
-        print(f"benchmarks: skipped ({err})", file=sys.stderr)
-        return []
-    if not isinstance(data, list):
-        print("benchmarks: skipped (expected a JSON list)", file=sys.stderr)
-        return []
-    rows = [row for row in data if isinstance(row, dict) and row.get("dataset")]
-    return rows
-
-
-def render_benchmarks(rows):
-    """Render benchmarks.json as the theme's table, or a one-line prompt when empty."""
-    if not rows:
-        return "*No measurements yet — add rows to `benchmarks.json` and push.*"
-
-    def cell(value):
-        return f"{value:.3f}" if isinstance(value, (int, float)) else "—"
-
-    lines = ["| dataset | baseline | ours | Δ |", "|---------|---------:|-----:|---:|"]
-    for row in rows:
-        baseline, ours = row.get("baseline"), row.get("ours")
-        if isinstance(baseline, (int, float)) and isinstance(ours, (int, float)):
-            delta = f"{ours - baseline:+.3f}"
-        else:
-            delta = "—"
-        dataset = escape(str(row["dataset"]))
-        lines.append(f"| {dataset} | {cell(baseline)} | {cell(ours)} | {delta} |")
-    return "\n".join(lines)
-
-
 def replace_block(text, begin, end, body):
     pattern = re.compile(re.escape(begin) + r".*?" + re.escape(end), re.S)
     return pattern.sub(lambda _: f"{begin}\n{body}\n{end}", text)
@@ -246,11 +202,6 @@ def main():
         default=str(Path(__file__).resolve().parent.parent / "README.md"),
         help="path to the README to update",
     )
-    parser.add_argument(
-        "--benchmarks",
-        default="",
-        help="path to benchmarks.json (default: next to README.md)",
-    )
     args = parser.parse_args()
 
     user = os.environ.get("GH_USER", "").strip()
@@ -265,30 +216,28 @@ def main():
     publications = render_publications(rows[:MAX_ROWS]) if rows else ""
     works = render_works(repos)
 
-    path = Path(args.readme)
-    bench_path = Path(args.benchmarks) if args.benchmarks else path.resolve().parent / "benchmarks.json"
-    bench_rows = load_benchmarks(bench_path)
-    benchmarks = render_benchmarks(bench_rows)
-
     if args.dry_run:
         print(publications or "(no publication rows)")
         print()
         print(works or "(no repository rows)")
-        print()
-        print(benchmarks)
         return 0
 
+    if not publications and not works:
+        print("no rows fetched — leaving README.md untouched", file=sys.stderr)
+        return 0
+
+    path = Path(args.readme)
     text = path.read_text(encoding="utf-8")
     missing = [
         marker
-        for marker in (PUB_BEGIN, PUB_END, WORKS_BEGIN, WORKS_END, BENCH_BEGIN, BENCH_END)
+        for marker in (PUB_BEGIN, PUB_END, WORKS_BEGIN, WORKS_END)
         if marker not in text
     ]
     if missing:
         print(f"{path} is missing markers: {', '.join(missing)}", file=sys.stderr)
         return 1
 
-    updated = replace_block(text, BENCH_BEGIN, BENCH_END, benchmarks)
+    updated = text
     if publications:
         updated = replace_block(updated, PUB_BEGIN, PUB_END, publications)
     if works:
@@ -299,10 +248,7 @@ def main():
         return 0
 
     path.write_text(updated, encoding="utf-8", newline="\n")
-    print(
-        f"updated {path} ({len(rows[:MAX_ROWS])} publication rows, "
-        f"{len(bench_rows)} benchmark rows)"
-    )
+    print(f"updated {path} ({len(rows[:MAX_ROWS])} publication rows)")
     return 0
 
 

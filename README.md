@@ -46,20 +46,6 @@
 > <sub>auto-updated 17 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
 
-## `\section{Benchmarks}`
-
-`\begin{table}[t]`
-
-*Table 1 — frozen-embedding cell-type annotation, held-out donors.*
-
-<!-- Regenerated from benchmarks.json by automation/update_readme.py. Edit the
-     JSON, not this table; the Δ column is computed for you. -->
-<!-- BEGIN:benchmarks -->
-*No measurements yet — add rows to `benchmarks.json` and push.*
-<!-- END:benchmarks -->
-
-`\end{table}`
-
 ```sh
 python automation/update_readme.py   # rewrites the table above + the current-work block
 ```
