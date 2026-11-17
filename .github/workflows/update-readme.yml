@@ -1,0 +1,41 @@
+name: Refresh publications
+
+# Copy this file to .github/workflows/ in the repo that holds your README,
+# and copy automation/update_readme.py next to it (repo root).
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC, catches new arXiv papers
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # Don't re-trigger on the bot's own commit.
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate publications table
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+          ARXIV_AUTHOR: ${{ vars.ARXIV_AUTHOR }}
+        run: python3 automation/update_readme.py
+
+      - name: Commit if the table changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: refresh publications table"
+          git push
