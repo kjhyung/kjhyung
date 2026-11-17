@@ -41,9 +41,9 @@
 <!-- Regenerated from your most recently pushed repositories by
      automation/update_readme.py. Everything outside these markers is untouched. -->
 <!-- BEGIN:works -->
-> **Working on** · *auto-filled from your most recently pushed repository*
+> **Working on** · [Talktorial8](https://github.com/kjhyung/Talktorial8) — TeachOpenCADD T008: protein data acquisition from the PDB · Jupyter Notebook · today
 >
-> <sub>updated by automation/update_readme.py on every push</sub>
+> <sub>auto-updated 17 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
 
 ## `\section{Benchmarks}`
@@ -71,7 +71,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 <!-- BEGIN:publications -->
 | year | work | venue | links |
 |-----:|------|-------|-------|
-| — | *fills in on your next push* | — | — |
+| 2026 | Talktorial8 | code · Jupyter Notebook | [code](https://github.com/kjhyung/Talktorial8) |
 <!-- END:publications -->
 
 ## `\section{Toolchain}`
