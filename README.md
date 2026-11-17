@@ -84,29 +84,6 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 
 <sub>Also: Excel · SQL · IBM SPSS · OriginLab · Onshape · Microsoft Office · Overleaf</sub>
 
-## `\section{Metrics}`
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=kjhyung&show_icons=true&hide_border=true&bg_color=0d1117&title_color=39ff14&icon_color=39ff14&text_color=c9d1d9&include_all_commits=true&count_private=true" alt="stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kjhyung&layout=compact&hide_border=true&bg_color=0d1117&title_color=39ff14&text_color=c9d1d9&langs_count=8" alt="top languages" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kjhyung&hide_border=true&background=0d1117&stroke=39ff14&ring=39ff14&fire=39ff14&currStreakLabel=39ff14&sideLabels=c9d1d9&dates=c9d1d9&currStreakNum=ffffff&sideNums=ffffff" alt="streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=kjhyung&theme=onedark&no-frame=true&no-bg=true&column=7&margin-w=6" alt="trophies" />
-</p>
-
-## `\section{Contribution Graph}`
-
-<!-- Requires the Platane/snk action in this repo to generate the SVG:
-     https://github.com/Platane/snk -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/kjhyung/kjhyung/output/github-contribution-grid-snake.svg" alt="contribution snake" width="100%" />
-</p>
-
 ## `\section{Citations}`
 
 ```latex
@@ -126,9 +103,15 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 ## `\section{Contact}`
 
 ```latex
+\begin{contact}
+  email     Junhyung.kim@kcl.ac.uk
+  website   https://kjhyung.page.gd
+  linkedin  https://www.linkedin.com/in/junhyung-kim-62813a250/
+\end{contact}
+
 \end{document}
 ```
 
-<sub>Code Apache-2.0 · [Junhyung.kim@kcl.ac.uk](mailto:Junhyung.kim@kcl.ac.uk) · [kjhyung.page.gd](https://kjhyung.page.gd)</sub>
+<sub>Code Apache-2.0</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,55:123021,100:0d1117&height=120&section=footer" alt="" width="100%" />
