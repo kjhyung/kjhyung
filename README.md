@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://kjhyung.page.gd"><img src="https://img.shields.io/badge/site-kjhyung.page.gd-0d1117?style=for-the-badge&logo=firefox&logoColor=dc143c" alt="website" /></a>
+  <a href="https://kjhyung.github.io"><img src="https://img.shields.io/badge/site-kjhyung.github.io-0d1117?style=for-the-badge&logo=firefox&logoColor=dc143c" alt="website" /></a>
   <a href="mailto:Junhyung.kim@kcl.ac.uk"><img src="https://img.shields.io/badge/email-say%20hi-0d1117?style=for-the-badge&logo=gmail&logoColor=dc143c" alt="email" /></a>
   <a href="https://www.linkedin.com/in/junhyung-kim-62813a250/"><img src="https://img.shields.io/badge/LinkedIn-Junhyung%20Kim-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 </p>
@@ -80,7 +80,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
   author = {Kim, Junhyung},
   year   = {2026},
   note   = {Preprint in preparation},
-  url    = {https://kjhyung.page.gd}
+  url    = {https://kjhyung.github.io}
 }
 ```
 
@@ -89,7 +89,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 ```latex
 \begin{contact}
   email     Junhyung.kim@kcl.ac.uk
-  website   https://kjhyung.page.gd
+  website   https://kjhyung.github.io
   linkedin  https://www.linkedin.com/in/junhyung-kim-62813a250/
 \end{contact}
 
