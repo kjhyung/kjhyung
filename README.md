@@ -30,11 +30,15 @@
 
 ## `\section{Abstract}`
 
-`\begin{abstract}`
+```latex
+\begin{abstract}
+```
 
 > I am a 2nd Year Natural Science Student at King's College London with an immense interest in Bioinformatics. I utilise biological data such as omics to produce ML models.
 
-`\end{abstract}`
+```latex
+\end{abstract}
+```
 
 ## `\section{Current work}`
 
