@@ -87,8 +87,6 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
   <img src="tool%20chain.png" alt="Toolchain" width="90%" />
 </p>
 
-<sub>Also: Excel · SQL · IBM SPSS · OriginLab · Onshape · Microsoft Office · Overleaf</sub>
-
 ## `\section{Citations}`
 
 ```latex
@@ -97,7 +95,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 
 ```bibtex
 @misc{kim2026sequencing,
-  title  = {Representations for high-throughput sequencing data},
+  title  = {Bioinformatics Enthusiast},
   author = {Kim, Junhyung},
   year   = {2026},
   note   = {Preprint in preparation},
