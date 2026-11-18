@@ -54,7 +54,13 @@
 
 ```latex
 \begin{lstlisting}[language=bash]
+```
+
+```sh
 python automation/update_readme.py   # rewrites the table above + the current-work block
+```
+
+```latex
 \end{lstlisting}
 ```
 
