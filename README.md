@@ -55,7 +55,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 ## `\section{Publications}`
 
 ```latex
-egin{table}[h]
+\begin{table}[h]
 \centering
 \caption{Publications}
 ```
@@ -76,7 +76,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 ## `\section{Toolchain}`
 
 ```latex
-egin{figure}[h]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{"tool chain.png"}
 \caption{Toolchain}
