@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   refresh:
@@ -28,7 +29,9 @@ jobs:
           ARXIV_AUTHOR: ${{ vars.ARXIV_AUTHOR }}
         run: python3 automation/update_readme.py
 
-      - name: Commit if the table changed
+      - name: Propose the refreshed table as a pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- README.md; then
             echo "README.md unchanged"
@@ -36,6 +39,13 @@ jobs:
           fi
           git config user.name "Junhyung Kim"
           git config user.email "77619620+kjhyung@users.noreply.github.com"
+          branch="automation/readme-refresh"
+          git checkout -B "$branch"
           git add README.md
           git commit -m "docs: refresh publications table"
-          git push
+          git push --force origin "$branch"
+          if [ "$(gh pr list --head "$branch" --state open --json number --jq 'length')" = "0" ]; then
+            gh pr create --base main --head "$branch" \
+            --title "docs: refresh publications table" \
+            --body "Automated refresh of the publications table and current-work block."
+          fi
