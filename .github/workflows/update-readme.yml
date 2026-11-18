@@ -35,7 +35,7 @@ jobs:
             exit 0
           fi
           git config user.name "Junhyung Kim"
-          git config user.email "junhyungk26@gmail.com"
+          git config user.email "77619620+kjhyung@users.noreply.github.com"
           git add README.md
           git commit -m "docs: refresh publications table"
           git push
