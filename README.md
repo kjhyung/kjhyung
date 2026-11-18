@@ -52,8 +52,10 @@
 > <sub>auto-updated 18 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
 
-```sh
+```latex
+\begin{lstlisting}[language=bash]
 python automation/update_readme.py   # rewrites the table above + the current-work block
+\end{lstlisting}
 ```
 
 ## `\section{Publications}`
