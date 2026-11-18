@@ -45,7 +45,7 @@
 >
 > **Recently active** · [Talktorial8](https://github.com/kjhyung/Talktorial8)
 >
-> <sub>auto-updated 17 Nov 2026 · automation/update_readme.py</sub>
+> <sub>auto-updated 18 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
 
 ```sh
