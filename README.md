@@ -41,9 +41,9 @@
 <!-- Regenerated from your most recently pushed repositories by
      automation/update_readme.py. Everything outside these markers is untouched. -->
 <!-- BEGIN:works -->
-> **Working on** · [kjhyung.github.io](https://github.com/kjhyung/kjhyung.github.io) — Junhyung Kim — personal site · CSS · today
+> **Working on** · [kjhyung-archive](https://github.com/kjhyung/kjhyung-archive) — Junhyung Kim - profile · Python · today
 >
-> **Recently active** · [Talktorial8](https://github.com/kjhyung/Talktorial8)
+> **Recently active** · [kjhyung.github.io](https://github.com/kjhyung/kjhyung.github.io) · [Talktorial8](https://github.com/kjhyung/Talktorial8)
 >
 > <sub>auto-updated 18 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
@@ -65,6 +65,7 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 <!-- BEGIN:publications -->
 | year | work | venue | links |
 |-----:|------|-------|-------|
+| 2026 | kjhyung-archive | code · Python | [code](https://github.com/kjhyung/kjhyung-archive) |
 | 2026 | kjhyung.github.io | code · CSS | [code](https://github.com/kjhyung/kjhyung.github.io) |
 | 2026 | Talktorial8 | code · Jupyter Notebook | [code](https://github.com/kjhyung/Talktorial8) |
 <!-- END:publications -->
