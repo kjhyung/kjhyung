@@ -54,6 +54,12 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 
 ## `\section{Publications}`
 
+```latex
+egin{table}[h]
+\centering
+\caption{Publications}
+```
+
 <!-- Regenerated from arXiv + your recent GitHub pushes by
      automation/update_readme.py. Everything outside these markers is untouched. -->
 <!-- BEGIN:publications -->
@@ -63,10 +69,22 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
 | 2026 | Talktorial8 | code · Jupyter Notebook | [code](https://github.com/kjhyung/Talktorial8) |
 <!-- END:publications -->
 
+```latex
+\end{table}
+```
+
 ## `\section{Toolchain}`
 
+```latex
+egin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{"tool chain.png"}
+\caption{Toolchain}
+\end{figure}
+```
+
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,r,matlab,latex&theme=dark" alt="stack" />
+  <img src="tool%20chain.png" alt="Toolchain" width="90%" />
 </p>
 
 <sub>Also: Excel · SQL · IBM SPSS · OriginLab · Onshape · Microsoft Office · Overleaf</sub>
@@ -95,10 +113,12 @@ python automation/update_readme.py   # rewrites the table above + the current-wo
   website   https://kjhyung.github.io
   linkedin  https://www.linkedin.com/in/junhyung-kim-62813a250/
 \end{contact}
-
-\end{document}
 ```
 
 <sub>Code Apache-2.0</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,55:4a0a16,100:0d1117&height=120&section=footer" alt="" width="100%" />
+
+```latex
+\end{document}
+```
