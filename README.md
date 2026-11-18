@@ -42,6 +42,10 @@
 
 ## `\section{Current work}`
 
+```latex
+\begin{lstlisting}[language=bash]
+```
+
 <!-- Regenerated from your most recently pushed repositories by
      automation/update_readme.py. Everything outside these markers is untouched. -->
 <!-- BEGIN:works -->
@@ -51,10 +55,6 @@
 >
 > <sub>auto-updated 18 Nov 2026 · automation/update_readme.py</sub>
 <!-- END:works -->
-
-```latex
-\begin{lstlisting}[language=bash]
-```
 
 ```sh
 python automation/update_readme.py   # rewrites the table above + the current-work block
